@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://dctedvt57fec0"]
 
 [ext_resource type="FontFile" uid="uid://cpbs000sfdgd6" path="res://assets/BasicPixelFont.ttf" id="1_37p78"]
+[ext_resource type="Script" uid="uid://opvntanvllxq" path="res://hud.gd" id="1_64ctp"]
 
 [node name="HUD" type="Node2D" unique_id=656394136]
+script = ExtResource("1_64ctp")
 
 [node name="Button" type="Button" parent="." unique_id=260227869]
 offset_left = 515.0

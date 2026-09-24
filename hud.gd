@@ -1,15 +1,5 @@
 extends Node2D
 
-var score = 0
-var day = 0 
-var carrot_seeds = 0
-var lettuce_seeds = 0
-var pumpkin_seeds = 0
-var wateringcan_equiped = false
-var carrot_equiped = false
-var lettuce_equiped = false
-var pumpkin_equiped = false
-var player_by_house = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

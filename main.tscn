@@ -3,10 +3,58 @@
 [ext_resource type="PackedScene" uid="uid://3mtx5bmgn1g2" path="res://player.tscn" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://by8r2um8dh3q2" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dctedvt57fec0" path="res://hud.tscn" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://dsdiuwp4r1ee3" path="res://icon.svg" id="4_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://dvkudt3efk811" path="res://assets/Ladybug1.png" id="5_lquwl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_glgfw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_1bvp3")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_lquwl")
+}],
+"loop": 1,
+"name": &"player_nearby",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_glgfw"]
+size = Vector2(130, 130)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ufewp"]
+size = Vector2(170, 170)
 
 [node name="Main" type="Node2D" unique_id=1400923489]
 script = ExtResource("1_h2yge")
 
-[node name="Player" parent="." unique_id=718633263 instance=ExtResource("1_0xm2m")]
+[node name="Player" parent="." unique_id=718633263 groups=["player"] instance=ExtResource("1_0xm2m")]
+position = Vector2(416, 205)
 
 [node name="HUD" parent="." unique_id=656394136 instance=ExtResource("2_h2yge")]
+visible = false
+
+[node name="House" type="StaticBody2D" parent="." unique_id=418637111]
+position = Vector2(87, 91)
+
+[node name="HouseSprite" type="AnimatedSprite2D" parent="House" unique_id=146741484]
+sprite_frames = SubResource("SpriteFrames_glgfw")
+animation = &"player_nearby"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House" unique_id=128456905]
+shape = SubResource("RectangleShape2D_glgfw")
+
+[node name="HouseArea" type="Area2D" parent="House" unique_id=686969602]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/HouseArea" unique_id=1895457319]
+shape = SubResource("RectangleShape2D_ufewp")
+
+[connection signal="body_entered" from="House/HouseArea" to="." method="_on_house_area_body_entered"]
+[connection signal="body_exited" from="House/HouseArea" to="." method="_on_house_area_body_exited"]
