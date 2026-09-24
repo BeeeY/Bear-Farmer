@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dctedvt57fec0"]
+
+[ext_resource type="FontFile" uid="uid://cpbs000sfdgd6" path="res://assets/BasicPixelFont.ttf" id="1_37p78"]
+
+[node name="HUD" type="Node2D" unique_id=656394136]
+
+[node name="Button" type="Button" parent="." unique_id=260227869]
+offset_left = 515.0
+offset_top = 500.0
+offset_right = 636.0
+offset_bottom = 556.0
+theme_override_fonts/font = ExtResource("1_37p78")
+theme_override_font_sizes/font_size = 50
+text = "Start"
