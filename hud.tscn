@@ -30,3 +30,4 @@ offset_bottom = 418.0
 text = "No"
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="NextDayYes" to="." method="_on_next_day_yes_pressed"]
