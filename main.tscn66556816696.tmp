@@ -35,6 +35,9 @@ size = Vector2(170, 170)
 [node name="Main" type="Node2D" unique_id=1400923489]
 script = ExtResource("1_h2yge")
 
+[node name="Player" parent="." unique_id=718633263 groups=["player"] instance=ExtResource("1_0xm2m")]
+position = Vector2(306, 199)
+
 [node name="HUD" parent="." unique_id=656394136 instance=ExtResource("2_h2yge")]
 visible = false
 
@@ -57,13 +60,5 @@ shape = SubResource("RectangleShape2D_ufewp")
 [node name="PlantPlot" parent="." unique_id=151497619 instance=ExtResource("6_7mycd")]
 position = Vector2(156, 484)
 
-[node name="Player" parent="." unique_id=718633263 groups=["player"] instance=ExtResource("1_0xm2m")]
-position = Vector2(306, 199)
-
-[node name="Spawn" type="Marker2D" parent="." unique_id=1397157540]
-position = Vector2(584, 360)
-
-[connection signal="next_day" from="." to="HUD" method="_on_main_next_day"]
-[connection signal="start" from="HUD" to="." method="_on_hud_start"]
 [connection signal="body_entered" from="House/HouseArea" to="." method="_on_house_area_body_entered"]
 [connection signal="body_exited" from="House/HouseArea" to="." method="_on_house_area_body_exited"]

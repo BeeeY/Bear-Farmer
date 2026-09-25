@@ -6,7 +6,7 @@
 [node name="HUD" type="Node2D" unique_id=656394136]
 script = ExtResource("1_64ctp")
 
-[node name="Button" type="Button" parent="." unique_id=260227869]
+[node name="StartButton" type="Button" parent="." unique_id=260227869]
 offset_left = 515.0
 offset_top = 500.0
 offset_right = 636.0
@@ -14,3 +14,19 @@ offset_bottom = 556.0
 theme_override_fonts/font = ExtResource("1_37p78")
 theme_override_font_sizes/font_size = 50
 text = "Start"
+
+[node name="NextDayYes" type="Button" parent="." unique_id=1673398465]
+offset_left = 395.0
+offset_top = 382.0
+offset_right = 430.0
+offset_bottom = 413.0
+text = "Yes"
+
+[node name="NextDayNo" type="Button" parent="." unique_id=645848782]
+offset_left = 691.0
+offset_top = 387.0
+offset_right = 722.0
+offset_bottom = 418.0
+text = "No"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
