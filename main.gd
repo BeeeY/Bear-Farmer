@@ -22,8 +22,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	## on day 60 game ends
-	if day == 60:
+	## on day 30 game ends
+	if day == 30:
 		game_over.emit()
 	
 	## changes what the house looks like when the player is nearby
