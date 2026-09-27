@@ -86,9 +86,6 @@ offset_top = 330.0
 offset_right = 982.0
 offset_bottom = 530.0
 
-[node name="Player" parent="." unique_id=718633263 groups=["player"] instance=ExtResource("1_0xm2m")]
-position = Vector2(1038, 391)
-
 [node name="House" type="StaticBody2D" parent="." unique_id=418637111]
 position = Vector2(166, 157)
 metadata/_edit_group_ = true
@@ -125,6 +122,9 @@ collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mailbox/HouseArea" unique_id=820712375]
 shape = SubResource("RectangleShape2D_2cqfq")
+
+[node name="Player" parent="." unique_id=718633263 groups=["player"] instance=ExtResource("1_0xm2m")]
+position = Vector2(1038, 391)
 
 [node name="Spawn" type="Marker2D" parent="." unique_id=1397157540]
 position = Vector2(559, 396)
