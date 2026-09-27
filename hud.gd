@@ -15,6 +15,16 @@ var dialogue_lines: PackedStringArray = [
 	"It's time to set out some roots!",
 ]
 
+## end-of-game outcomes, checked from the highest food score down to the lowest
+const ENDINGS := [
+	{"min": 26, "rank": "Legendary", "text": "A feast fit for a long winter nap!"},
+	{"min": 16, "rank": "Great", "text": "Well stocked - a cozy hibernation."},
+	{"min": 9, "rank": "Good", "text": "A solid harvest, you'll be fine."},
+	{"min": 4, "rank": "Survivor", "text": "A meager haul, but you'll scrape by."},
+	{"min": 1, "rank": "Hungry", "text": "Barely anything - a cold winter."},
+	{"min": 0, "rank": "Starving", "text": "Nothing stored - a grim winter."},
+]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$DayCounter.hide()
@@ -106,22 +116,19 @@ func _hide_end_ui() -> void:
 	$EndResult.hide()
 	$EndButton.hide()
 
-## shows the results popup once all 30 days are done, rating the player by stored food
+## shows the results popup once all 30 days are done, giving a different outcome
+## (rank + message) depending on the weighted amount of food stored
 func _show_ending() -> void:
 	_hide_sign_ui()
-	var total: int = FarmManager.harvest_count("1") + FarmManager.harvest_count("2") + FarmManager.harvest_count("3")
-	var rating: String
-	if total >= 24:
-		rating = "Incredible! Your den is bursting at the seams."
-	elif total >= 15:
-		rating = "Great work - you'll sleep soundly this winter."
-	elif total >= 8:
-		rating = "Not bad - you'll make it through the cold."
-	elif total >= 1:
-		rating = "Thin harvest... you'll survive, barely."
-	else:
-		rating = "Oh no - you have nothing stored up!"
-	$EndResult.text = "Food stored: %d\n%s" % [total, rating]
+	var food: int = FarmManager.food_total()
+	var rank: String = "Starving"
+	var text: String = "Nothing stored - a grim winter."
+	for tier in ENDINGS:
+		if food >= int(tier["min"]):
+			rank = str(tier["rank"])
+			text = str(tier["text"])
+			break
+	$EndResult.text = "%s  -  Food: %d\n%s" % [rank, food, text]
 	$EndSign.show()
 	$EndTitle.show()
 	$EndResult.show()

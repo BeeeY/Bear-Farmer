@@ -5,10 +5,12 @@ signal tool_used(tool: Tool)
 ## emitted whenever coins or crop/seed counts change (for the HUD)
 signal inventory_changed
 
-## crop id -> price of one seed
-const SEED_PRICES := {"1": 5, "2": 8, "3": 12}
-## crop id -> coins earned by selling one harvested crop
-const CROP_VALUES := {"1": 12, "2": 20, "3": 30}
+## crop id -> price of one seed (corn & pumpkin cost more than carrot)
+const SEED_PRICES := {"1": 5, "2": 12, "3": 22}
+## crop id -> coins earned by selling one harvested crop (better crops sell for more)
+const CROP_VALUES := {"1": 12, "2": 25, "3": 50}
+## crop id -> food points one harvested crop is worth at the end of the game
+const FOOD_VALUES := {"1": 1, "2": 2, "3": 3}
 
 var plots: Array[FarmPlot] = []       
 var crop_database: Dictionary = {}  # id -> CropData
@@ -140,6 +142,13 @@ func seed_count(crop_id: String) -> int:
 
 func harvest_count(crop_id: String) -> int:
 	return int(harvested.get(crop_id, 0))
+
+## total "food" stored, weighting richer crops higher (used for the end-of-game result)
+func food_total() -> int:
+	var total: int = 0
+	for id in FOOD_VALUES:
+		total += harvest_count(id) * int(FOOD_VALUES[id])
+	return total
 
 ## unequips items
 func unequip_everthing() -> void:

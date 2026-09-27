@@ -369,21 +369,23 @@ theme = ExtResource("2_640wx")
 text = "Day : 1"
 
 [node name="PlantsHarvested" type="Label" parent="." unique_id=482097531]
-offset_left = 35.0
-offset_top = 74.0
-offset_right = 204.0
-offset_bottom = 245.0
+offset_left = 36.0
+offset_top = 72.0
+offset_right = 205.0
+offset_bottom = 243.0
 theme = ExtResource("2_640wx")
+theme_override_font_sizes/font_size = 25
 text = "Carrots: 0
 Corn: 0
 Pumpkins: 0"
 
 [node name="SeedCount" type="Label" parent="." unique_id=1041744205]
 offset_left = 35.0
-offset_top = 250.0
+offset_top = 170.0
 offset_right = 250.0
-offset_bottom = 421.0
+offset_bottom = 341.0
 theme = ExtResource("2_640wx")
+theme_override_font_sizes/font_size = 25
 text = "Seeds:
 Carrot: 0
 Corn: 0
