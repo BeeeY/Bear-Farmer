@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CropData" format=3 uid="uid://cfpf45o106a6n"]
+
+[ext_resource type="Script" uid="uid://b4obenqre4w5u" path="res://CropData.gd" id="1_eghpu"]
+
+[resource]
+script = ExtResource("1_eghpu")
+id = "3"
+name = "Pumpkin"
+days_to_grow = 7
+stage_sprites = Array[Texture2D]([null, null, null, null])
+yield_amount = 1
+metadata/_custom_type_script = "uid://b4obenqre4w5u"

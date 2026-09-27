@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CropData" format=3 uid="uid://bvxm5w5y21hyp"]
+
+[ext_resource type="Script" uid="uid://b4obenqre4w5u" path="res://CropData.gd" id="1_cwccw"]
+
+[resource]
+script = ExtResource("1_cwccw")
+id = "2"
+name = "Corn"
+days_to_grow = 5
+stage_sprites = Array[Texture2D]([null, null, null])
+yield_amount = 4
+metadata/_custom_type_script = "uid://b4obenqre4w5u"

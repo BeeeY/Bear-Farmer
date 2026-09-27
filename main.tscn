@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dctedvt57fec0" path="res://hud.tscn" id="2_h2yge"]
 [ext_resource type="Texture2D" uid="uid://dsdiuwp4r1ee3" path="res://icon.svg" id="4_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://dvkudt3efk811" path="res://assets/Ladybug1.png" id="5_lquwl"]
-[ext_resource type="PackedScene" uid="uid://bmbf43ugjkv7s" path="res://plant_plot.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://b0a22jbkljdhf" path="res://farm.tscn" id="7_272bh"]
+[ext_resource type="AudioStream" uid="uid://ddtnf230tvymp" path="res://assets/BearFarmerSong.wav" id="8_5vw27"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_glgfw"]
 animations = [{
@@ -33,8 +34,17 @@ size = Vector2(130, 130)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ufewp"]
 size = Vector2(170, 170)
 
-[node name="Main" type="Node2D" unique_id=1400923489]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_272bh"]
+size = Vector2(1152, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ra5af"]
+size = Vector2(20, 640)
+
+[node name="Main" type="Node2D" unique_id=2123950146]
 script = ExtResource("1_h2yge")
+
+[node name="HUD" parent="." unique_id=656394136 instance=ExtResource("2_h2yge")]
+metadata/_edit_lock_ = true
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1665936881]
 position = Vector2(576, 324)
@@ -59,66 +69,52 @@ collision_layer = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="House/HouseArea" unique_id=1895457319]
 shape = SubResource("RectangleShape2D_ufewp")
 
-[node name="PlantPlot" parent="." unique_id=151497619 instance=ExtResource("6_7mycd")]
-position = Vector2(558, 282)
-
-[node name="PlantPlot2" parent="." unique_id=1471862883 instance=ExtResource("6_7mycd")]
-position = Vector2(668, 281)
-
-[node name="PlantPlot3" parent="." unique_id=847866324 instance=ExtResource("6_7mycd")]
-position = Vector2(778, 282)
-
-[node name="PlantPlot4" parent="." unique_id=307744293 instance=ExtResource("6_7mycd")]
-position = Vector2(887, 283)
-
-[node name="PlantPlot5" parent="." unique_id=2107257980 instance=ExtResource("6_7mycd")]
-position = Vector2(556, 394)
-
-[node name="PlantPlot6" parent="." unique_id=65628510 instance=ExtResource("6_7mycd")]
-position = Vector2(668, 392)
-
-[node name="PlantPlot7" parent="." unique_id=1897078193 instance=ExtResource("6_7mycd")]
-position = Vector2(777, 392)
-
-[node name="PlantPlot8" parent="." unique_id=1536781674 instance=ExtResource("6_7mycd")]
-position = Vector2(889, 390)
-
-[node name="PlantPlot9" parent="." unique_id=349896305 instance=ExtResource("6_7mycd")]
-position = Vector2(554, 508)
-
-[node name="PlantPlot10" parent="." unique_id=856047377 instance=ExtResource("6_7mycd")]
-position = Vector2(668, 505)
-
-[node name="PlantPlot11" parent="." unique_id=1809174034 instance=ExtResource("6_7mycd")]
-position = Vector2(780, 504)
-
-[node name="PlantPlot12" parent="." unique_id=1179217995 instance=ExtResource("6_7mycd")]
-position = Vector2(890, 504)
-
-[node name="PlantPlot13" parent="." unique_id=375723869 instance=ExtResource("6_7mycd")]
-position = Vector2(554, 617)
-
-[node name="PlantPlot14" parent="." unique_id=219664553 instance=ExtResource("6_7mycd")]
-position = Vector2(665, 615)
-
-[node name="PlantPlot15" parent="." unique_id=1876658924 instance=ExtResource("6_7mycd")]
-position = Vector2(777, 615)
-
-[node name="PlantPlot16" parent="." unique_id=1074640828 instance=ExtResource("6_7mycd")]
-position = Vector2(889, 613)
+[node name="Farm" parent="." unique_id=2106635932 instance=ExtResource("7_272bh")]
+offset_left = 682.0
+offset_top = 330.0
+offset_right = 982.0
+offset_bottom = 530.0
 
 [node name="Player" parent="." unique_id=718633263 groups=["player"] instance=ExtResource("1_0xm2m")]
 position = Vector2(1038, 391)
 
 [node name="Spawn" type="Marker2D" parent="." unique_id=1397157540]
-position = Vector2(584, 360)
+position = Vector2(390, 352)
 
-[node name="HUD" parent="." unique_id=656394136 instance=ExtResource("2_h2yge")]
-metadata/_edit_lock_ = true
+[node name="Area2D" type="Area2D" parent="." unique_id=900656497]
+position = Vector2(578, 654)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1222635138]
+shape = SubResource("RectangleShape2D_272bh")
+
+[node name="Area2D3" type="Area2D" parent="." unique_id=1490732961]
+position = Vector2(578, 0)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3" unique_id=612203895]
+shape = SubResource("RectangleShape2D_272bh")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=1047812272]
+position = Vector2(-9, 327)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=605034613]
+shape = SubResource("RectangleShape2D_ra5af")
+
+[node name="Area2D4" type="Area2D" parent="." unique_id=755238592]
+position = Vector2(1162, 325)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4" unique_id=1500900429]
+shape = SubResource("RectangleShape2D_ra5af")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=685637437]
+stream = ExtResource("8_5vw27")
+autoplay = true
 
 [connection signal="next_day" from="." to="HUD" method="_on_main_next_day"]
+[connection signal="nextday" from="HUD" to="." method="_on_hud_nextday"]
+[connection signal="start" from="HUD" to="." method="_on_hud_start"]
 [connection signal="body_entered" from="House/HouseArea" to="." method="_on_house_area_body_entered"]
 [connection signal="body_exited" from="House/HouseArea" to="." method="_on_house_area_body_exited"]
-[connection signal="nextday" from="HUD" to="." method="_on_hud_nextday"]
-[connection signal="nextday" from="HUD" to="PlantPlot" method="_on_hud_nextday"]
-[connection signal="start" from="HUD" to="." method="_on_hud_start"]

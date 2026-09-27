@@ -77,3 +77,13 @@ collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=159919182]
 shape = SubResource("RectangleShape2D_0077c")
+
+[node name="Water" type="ColorRect" parent="." unique_id=1248893712]
+offset_left = -38.0
+offset_top = -27.0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0.45882353, 0.4627451, 0.1882353)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

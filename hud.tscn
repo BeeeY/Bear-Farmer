@@ -1,50 +1,38 @@
 [gd_scene format=3 uid="uid://dctedvt57fec0"]
 
-[ext_resource type="FontFile" uid="uid://cpbs000sfdgd6" path="res://assets/BasicPixelFont.ttf" id="1_37p78"]
 [ext_resource type="Script" uid="uid://opvntanvllxq" path="res://hud.gd" id="1_64ctp"]
 [ext_resource type="Theme" uid="uid://b83kp50odklfb" path="res://new_theme.tres" id="2_640wx"]
 [ext_resource type="Texture2D" uid="uid://6yg0huso84ov" path="res://assets/next day sign standin.png" id="3_8sq4i"]
 
-[node name="HUD" type="Node2D" unique_id=656394136]
+[node name="HUD" type="CanvasLayer" unique_id=1081153660]
 script = ExtResource("1_64ctp")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=406025875]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=337181462]
 offset_right = 1152.0
 offset_bottom = 648.0
-color = Color(0.372026, 0.4798339, 0.5498634, 1)
+color = Color(0.5576431, 0.7655508, 0.88665074, 1)
+metadata/_edit_lock_ = true
 
 [node name="TitleBackground" type="Sprite2D" parent="." unique_id=395237058]
 
 [node name="StartButton" type="Button" parent="." unique_id=260227869]
-offset_left = 515.0
-offset_top = 500.0
-offset_right = 636.0
-offset_bottom = 556.0
+offset_left = 528.0
+offset_top = 487.0
+offset_right = 649.0
+offset_bottom = 543.0
 theme = ExtResource("2_640wx")
-theme_override_fonts/font = ExtResource("1_37p78")
 theme_override_font_sizes/font_size = 50
 text = "Start"
 
-[node name="NextDaySign" type="Sprite2D" parent="." unique_id=2132740774]
-position = Vector2(558.00006, 289)
-scale = Vector2(1.8079998, 1.8199999)
-texture = ExtResource("3_8sq4i")
-
-[node name="NextDayYes" type="Button" parent="." unique_id=1673398465]
-offset_left = 378.0
-offset_top = 303.0
-offset_right = 497.0
-offset_bottom = 351.0
+[node name="Title" type="Label" parent="." unique_id=1213436706]
+offset_left = 82.0
+offset_top = 56.0
+offset_right = 908.0
+offset_bottom = 489.0
 theme = ExtResource("2_640wx")
-text = "Yes"
-
-[node name="NextDayNo" type="Button" parent="." unique_id=645848782]
-offset_left = 595.0
-offset_top = 300.0
-offset_right = 725.0
-offset_bottom = 350.0
-theme = ExtResource("2_640wx")
-text = "No"
+theme_override_font_sizes/font_size = 200
+text = "Setting Out 
+Roots"
 
 [node name="DayCounter" type="Label" parent="." unique_id=448471709]
 offset_left = 39.0
@@ -54,6 +42,107 @@ offset_bottom = 41.0
 theme = ExtResource("2_640wx")
 text = "Day : 1"
 
+[node name="NextDaySign" type="Sprite2D" parent="." unique_id=2132740774]
+position = Vector2(558.00006, 289)
+scale = Vector2(1.8079998, 1.8199999)
+texture = ExtResource("3_8sq4i")
+
+[node name="NextDayYes" type="Button" parent="NextDaySign" unique_id=1673398465]
+offset_left = -99.557556
+offset_top = 7.6923065
+offset_right = 19.442444
+offset_bottom = 62.692307
+theme = ExtResource("2_640wx")
+text = "Yes"
+
+[node name="NextDayNo" type="Button" parent="NextDaySign" unique_id=645848782]
+offset_left = 20.46457
+offset_top = 6.0439606
+offset_right = 150.46457
+offset_bottom = 61.04396
+theme = ExtResource("2_640wx")
+text = "No"
+
+[node name="Shop" type="Sprite2D" parent="." unique_id=2116241071]
+position = Vector2(568, 323.00003)
+scale = Vector2(3, 3)
+texture = ExtResource("3_8sq4i")
+
+[node name="BuySell" type="Label" parent="." unique_id=1302936994]
+offset_left = 376.0
+offset_top = 303.0
+offset_right = 439.0
+offset_bottom = 326.0
+theme = ExtResource("2_640wx")
+text = "Buy/Sell"
+
+[node name="Amount" type="Label" parent="." unique_id=2041297639]
+offset_left = 284.0
+offset_top = 369.0
+offset_right = 359.0
+offset_bottom = 392.0
+theme = ExtResource("2_640wx")
+text = "Amount : "
+
+[node name="Value" type="Label" parent="." unique_id=869238323]
+offset_left = 432.0
+offset_top = 368.0
+offset_right = 488.0
+offset_bottom = 391.0
+theme = ExtResource("2_640wx")
+text = "Value : "
+
+[node name="Upgrades" type="Label" parent="." unique_id=985759240]
+offset_left = 706.0
+offset_top = 308.0
+offset_right = 780.0
+offset_bottom = 331.0
+theme = ExtResource("2_640wx")
+text = "Upgrades"
+
+[node name="Money" type="Label" parent="." unique_id=1038321809]
+offset_left = 477.0
+offset_top = 188.0
+offset_right = 616.0
+offset_bottom = 243.0
+theme = ExtResource("2_640wx")
+theme_override_font_sizes/font_size = 50
+text = "Coins : 0"
+
+[node name="PlantSelect" type="OptionButton" parent="." unique_id=1698596420]
+offset_left = 281.0
+offset_top = 334.0
+offset_right = 383.0
+offset_bottom = 365.0
+allow_reselect = true
+item_count = 3
+popup/item_0/text = "Carrot"
+popup/item_0/id = 0
+popup/item_1/text = "Corn"
+popup/item_1/id = 1
+popup/item_2/text = "Pumpkin"
+popup/item_2/id = 2
+
+[node name="BuySellSelect" type="OptionButton" parent="." unique_id=767441382]
+offset_left = 431.0
+offset_top = 333.0
+offset_right = 493.0
+offset_bottom = 364.0
+allow_reselect = true
+item_count = 2
+popup/item_0/text = "Buy"
+popup/item_0/id = 0
+popup/item_1/text = "Sell"
+popup/item_1/id = 1
+
+[node name="DayNightFade" type="ColorRect" parent="." unique_id=406025875]
+visible = false
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="NextDayYes" to="." method="_on_next_day_yes_pressed"]
-[connection signal="pressed" from="NextDayNo" to="." method="_on_next_day_no_pressed"]
+[connection signal="pressed" from="NextDaySign/NextDayYes" to="." method="_on_next_day_yes_pressed"]
+[connection signal="pressed" from="NextDaySign/NextDayNo" to="." method="_on_next_day_no_pressed"]

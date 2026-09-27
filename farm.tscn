@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://b0a22jbkljdhf"]
+
+[ext_resource type="Script" uid="uid://cxhmwkw54f5l6" path="res://farm.gd" id="1_bw225"]
+[ext_resource type="PackedScene" uid="uid://bmbf43ugjkv7s" path="res://plant_plot.tscn" id="1_ju177"]
+
+[node name="Farm" type="GridContainer" unique_id=2106635932]
+theme_override_constants/h_separation = 100
+theme_override_constants/v_separation = 100
+columns = 4
+script = ExtResource("1_bw225")
+
+[node name="Control" type="Control" parent="." unique_id=1890630667]
+layout_mode = 2
+
+[node name="PlantPlot" parent="Control" unique_id=151497619 instance=ExtResource("1_ju177")]
+
+[node name="Control2" type="Control" parent="." unique_id=621161382]
+layout_mode = 2
+
+[node name="PlantPlot" parent="Control2" unique_id=1508091234 instance=ExtResource("1_ju177")]
+
+[node name="Control3" type="Control" parent="." unique_id=1609548653]
+layout_mode = 2
+
+[node name="PlantPlot" parent="Control3" unique_id=555181526 instance=ExtResource("1_ju177")]
+
+[node name="Control4" type="Control" parent="." unique_id=430121270]
+layout_mode = 2
+
+[node name="PlantPlot" parent="Control4" unique_id=50920460 instance=ExtResource("1_ju177")]
+
+[node name="Control5" type="Control" parent="." unique_id=255339819]
+layout_mode = 2
+
+[node name="PlantPlot" parent="Control5" unique_id=158544245 instance=ExtResource("1_ju177")]
+
+[node name="Control6" type="Control" parent="." unique_id=1400200058]
+layout_mode = 2
+
+[node name="PlantPlot" parent="Control6" unique_id=120654207 instance=ExtResource("1_ju177")]
+
+[node name="Control7" type="Control" parent="." unique_id=583483331]
+layout_mode = 2
+
+[node name="PlantPlot" parent="Control7" unique_id=186058270 instance=ExtResource("1_ju177")]
+
+[node name="Control8" type="Control" parent="." unique_id=2005273662]
+layout_mode = 2
+
+[node name="PlantPlot" parent="Control8" unique_id=2142645557 instance=ExtResource("1_ju177")]
+
+[node name="Control9" type="Control" parent="." unique_id=1497807850]
+layout_mode = 2
+
+[node name="PlantPlot" parent="Control9" unique_id=762502238 instance=ExtResource("1_ju177")]
+
+[node name="Control10" type="Control" parent="." unique_id=1350569950]
+layout_mode = 2
+
+[node name="PlantPlot" parent="Control10" unique_id=1941896716 instance=ExtResource("1_ju177")]
+
+[node name="Control11" type="Control" parent="." unique_id=2019042702]
+layout_mode = 2
+
+[node name="PlantPlot" parent="Control11" unique_id=1658583527 instance=ExtResource("1_ju177")]
+
+[node name="Control12" type="Control" parent="." unique_id=336788047]
+layout_mode = 2
+
+[node name="PlantPlot" parent="Control12" unique_id=558412897 instance=ExtResource("1_ju177")]
