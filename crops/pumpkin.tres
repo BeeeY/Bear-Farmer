@@ -1,7 +1,6 @@
 [gd_resource type="Resource" script_class="CropData" format=3 uid="uid://cfpf45o106a6n"]
 
 [ext_resource type="Script" uid="uid://b4obenqre4w5u" path="res://CropData.gd" id="1_eghpu"]
-[ext_resource type="Texture2D" uid="uid://cv3s56h003pk3" path="res://assets/Pumkin-5.png.png" id="2_we8ys"]
 [ext_resource type="Texture2D" uid="uid://dyutepsyan503" path="res://assets/New Piskel-1.png.png" id="3_q8nu8"]
 [ext_resource type="Texture2D" uid="uid://dwq3v6vmbfv2s" path="res://assets/Pumkin-3.png.png" id="4_aaxqn"]
 [ext_resource type="Texture2D" uid="uid://m51kcyeq64dc" path="res://assets/Pumkin-4.png.png" id="5_bqsj6"]
@@ -11,6 +10,6 @@ script = ExtResource("1_eghpu")
 id = "3"
 name = "Pumpkin"
 days_to_grow = 7
-stage_sprites = Array[Texture2D]([ExtResource("2_we8ys"), ExtResource("3_q8nu8"), ExtResource("4_aaxqn"), ExtResource("5_bqsj6")])
+stage_sprites = Array[Texture2D]([ExtResource("3_q8nu8"), ExtResource("4_aaxqn"), ExtResource("5_bqsj6")])
 yield_amount = 1
 metadata/_custom_type_script = "uid://b4obenqre4w5u"

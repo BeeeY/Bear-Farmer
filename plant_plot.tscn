@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bmbf43ugjkv7s"]
 
 [ext_resource type="Script" uid="uid://cea4orptnfet4" path="res://plant_plot.gd" id="1_y4svc"]
-[ext_resource type="Texture2D" uid="uid://b47ybxcgderm" path="res://assets/plant standin1.png" id="7_m5nwe"]
+[ext_resource type="Texture2D" uid="uid://c71i1p3kp1i11" path="res://assets/New Piskel-5.png.png" id="2_8v7dn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0077c"]
 size = Vector2(90, 90)
@@ -12,7 +12,7 @@ metadata/_edit_group_ = true
 
 [node name="CropSprite" type="Sprite2D" parent="." unique_id=83426421]
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("7_m5nwe")
+texture = ExtResource("2_8v7dn")
 offset = Vector2(0, -20)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=95453682]
