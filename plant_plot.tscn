@@ -1,63 +1,7 @@
 [gd_scene format=3 uid="uid://bmbf43ugjkv7s"]
 
 [ext_resource type="Script" uid="uid://cea4orptnfet4" path="res://plant_plot.gd" id="1_y4svc"]
-[ext_resource type="Texture2D" uid="uid://dk1w01s1mbmeu" path="res://assets/plant standin2.png" id="2_ouk1d"]
-[ext_resource type="Texture2D" uid="uid://c1kallbxtri0x" path="res://assets/plant standin3.png" id="3_rs712"]
-[ext_resource type="Texture2D" uid="uid://ehvwhm4u538t" path="res://assets/plant standin4.png" id="4_loduc"]
-[ext_resource type="Texture2D" uid="uid://cl7nmfs4443g3" path="res://assets/plant standin5.png" id="5_g157e"]
-[ext_resource type="Texture2D" uid="uid://btx1y7e61d1lt" path="res://assets/plant standin6.png" id="6_185ro"]
 [ext_resource type="Texture2D" uid="uid://b47ybxcgderm" path="res://assets/plant standin1.png" id="7_m5nwe"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_mba6j"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_ouk1d")
-}],
-"loop": 1,
-"name": &"corn1",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_rs712")
-}],
-"loop": 1,
-"name": &"corn2",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_loduc")
-}],
-"loop": 1,
-"name": &"corn3",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_g157e")
-}],
-"loop": 1,
-"name": &"corn4",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_185ro")
-}],
-"loop": 1,
-"name": &"corn5",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_m5nwe")
-}],
-"loop": 1,
-"name": &"dirt",
-"speed": 5.0
-}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0077c"]
 size = Vector2(90, 90)
@@ -66,10 +10,9 @@ size = Vector2(90, 90)
 script = ExtResource("1_y4svc")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=83426421]
+[node name="CropSprite" type="Sprite2D" parent="." unique_id=83426421]
 scale = Vector2(1.5, 1.5)
-sprite_frames = SubResource("SpriteFrames_mba6j")
-animation = &"dirt"
+texture = ExtResource("7_m5nwe")
 offset = Vector2(0, -20)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=95453682]

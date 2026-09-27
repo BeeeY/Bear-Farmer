@@ -1,5 +1,8 @@
 extends Node
 
+## emitted whenever a tool is actually used on a plot (for player animation)
+signal tool_used(tool: Tool)
+
 var plots: Array[FarmPlot] = []       
 var crop_database: Dictionary = {}  # id -> CropData
 var selected_seed: CropData = null  # set by your seed-picker UI
@@ -14,40 +17,53 @@ var pumpkin_equiped = false
 var player_by_house = false
 enum Tool { Hand, Carrot_Seeds, Corn_Seeds, Pumpkin_Seeds, Watering_Can }
 
-	## detects for swapping tools
-func _process(delta: float):
+	## detects for swapping tools with number keys 1-4
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("1"):
-		if wateringcan_equiped == true:
-			unequip_everthing()
-		else:
-			unequip_everthing()
-			wateringcan_equiped = true
-			equipped_tool = Tool.Watering_Can
-	if Input.is_action_just_pressed("2"):
-		if carrot_equiped == true:
-			unequip_everthing()
-		else:
-			unequip_everthing()
-			carrot_equiped = true
-			equipped_tool = Tool.Carrot_Seeds
-	if Input.is_action_just_pressed("3"):
-		if corn_equiped == true:
-			unequip_everthing()
-		else:
-			unequip_everthing()
-			corn_equiped = true
-			equipped_tool = Tool.Corn_Seeds
-	if Input.is_action_just_pressed("4"):
-		if pumpkin_equiped:
-			unequip_everthing()
-		else:
-			unequip_everthing()
-			pumpkin_equiped = true
-			equipped_tool = Tool.Pumpkin_Seeds
+		select_tool(Tool.Watering_Can)
+	elif Input.is_action_just_pressed("2"):
+		select_tool(Tool.Carrot_Seeds)
+	elif Input.is_action_just_pressed("3"):
+		select_tool(Tool.Corn_Seeds)
+	elif Input.is_action_just_pressed("4"):
+		select_tool(Tool.Pumpkin_Seeds)
 
-func _ready():
+	## selects a tool, or puts it away again if it is already selected
+func select_tool(tool: Tool) -> void:
+	if equipped_tool == tool:
+		clear_tool()
+		return
+	unequip_everthing()
+	equipped_tool = tool
+	# a seed tool also chooses which crop gets planted
+	selected_seed = _crop_for_tool(tool)
+	wateringcan_equiped = tool == Tool.Watering_Can
+	carrot_equiped = tool == Tool.Carrot_Seeds
+	corn_equiped = tool == Tool.Corn_Seeds
+	pumpkin_equiped = tool == Tool.Pumpkin_Seeds
+
+	## puts the current tool away and falls back to the bare hand
+func clear_tool() -> void:
+	unequip_everthing()
+	equipped_tool = Tool.Hand
+	selected_seed = null
+
+	## maps a seed tool to the crop resource it plants
+func _crop_for_tool(tool: Tool) -> CropData:
+	match tool:
+		Tool.Carrot_Seeds:
+			return crop_database.get("1") as CropData
+		Tool.Corn_Seeds:
+			return crop_database.get("2") as CropData
+		Tool.Pumpkin_Seeds:
+			return crop_database.get("3") as CropData
+		_:
+			return null
+
+func _ready() -> void:
 	_load_crop_database()
-	equipped_tool = Tool.Watering_Can
+	equipped_tool = Tool.Hand
+	selected_seed = null
 
 func _load_crop_database():
 	var dir = DirAccess.open("res://crops/")
@@ -63,6 +79,7 @@ func _on_day_passed():
 func request_plant(plot: FarmPlot):
 	if selected_seed:
 		plot.plant(selected_seed)
+		tool_used.emit(equipped_tool)
 
 func deposit_harvest(result: Dictionary):
 	if result.is_empty():
@@ -71,9 +88,8 @@ func deposit_harvest(result: Dictionary):
 	# replace with your actual Inventory autoload call
 	
 ## unequips items
-func unequip_everthing():
+func unequip_everthing() -> void:
 	wateringcan_equiped = false
 	carrot_equiped = false
 	corn_equiped = false
 	pumpkin_equiped = false
-	player_by_house = false

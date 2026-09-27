@@ -6,7 +6,12 @@ signal nextday
 
 var day = 1
 var dialougestarted = false
-var dialouge = 1
+var dialouge = 0
+var dialogue_lines: PackedStringArray = [
+	"It's my first fall alone, and it's time to prep for winter.",
+	"I have 30 days to farm enough food to keep me full while I hibernate.",
+	"It's time to set out some roots!",
+]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,23 +24,22 @@ func _ready() -> void:
 	nextday.connect(FarmManager._on_day_passed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-		if dialougestarted == true && dialouge == 1:
-			$Dialouge.text = "It's my first fall alone, and it's time to 
-			prep for winter."
-			$Dialouge.show()
-			dialouge += 1
-		if Input.is_action_just_pressed("e") && dialouge == 2:
-			$Dialouge.text = "I have 30 days to farm enough food to 
-			keep me full while I hibernate."
-			dialouge +=1
-		if Input.is_action_just_pressed("e") && dialouge == 3:
-			$Dialouge.text = "It's time to set out some roots!"
-			dialouge +=1
-		if Input.is_action_just_pressed("e") && dialouge == 4:
-			$Dialouge.hide()
-			$DialougeBox.hide()
-			start.emit()
+func _process(_delta: float) -> void:
+	if dialougestarted:
+		if Input.is_action_just_pressed("click"):
+			advance_dialogue()
+
+## shows the next intro line, or closes the intro after the last one
+func advance_dialogue() -> void:
+	dialouge += 1
+	if dialouge >= dialogue_lines.size():
+		dialougestarted = false
+		$Dialouge.hide()
+		$DialougeBox.hide()
+		start.emit()
+		return
+	$Dialouge.text = dialogue_lines[dialouge]
+	$Dialouge.show()
 
 ## starts the game
 func _on_start_button_pressed() -> void:
@@ -45,6 +49,9 @@ func _on_start_button_pressed() -> void:
 	$DayCounter.show()
 	intro.emit()
 	$DialougeBox.show()
+	dialouge = 0
+	$Dialouge.text = dialogue_lines[0]
+	$Dialouge.show()
 	dialougestarted = true
 
 	
@@ -98,3 +105,9 @@ func toggle_shop():
 
 func _on_main_shop() -> void:
 	$Shop.show()
+	$BuySell.show()
+	$BuySellSelect.show()
+	$Amount.show()
+	$Money.show()
+	$Value.show()
+	$PlantSelect.show()

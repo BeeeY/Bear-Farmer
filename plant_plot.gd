@@ -3,21 +3,23 @@ class_name FarmPlot
 
 enum State { Empty, Planted, Ready }
 
-@export var plot_id = 0
-@onready var sprite = $AnimatedSprite2D
+const DIRT_TEXTURE := preload("res://assets/plant standin1.png")
 
+@export var plot_id: int = 0
+@onready var sprite: Sprite2D = $CropSprite
 
 var state: State = State.Empty
-var crop = CropData
-var plant_stage = 0
-var days_grown = 0
-var watered = false
-var player_nearby = false
+var crop: CropData = null
+var plant_stage: int = 0
+var days_grown: int = 0
+var watered: bool = false
+var player_nearby: bool = false
 
-func _ready():
+func _ready() -> void:
 	$Water.hide()
+	update_sprite()
 	
-func _process(delta):
+func _process(_delta: float) -> void:
 	if player_nearby == false:
 		return
 	elif player_nearby == true && Input.is_action_just_pressed("e"):
@@ -38,15 +40,16 @@ func _process(delta):
 					var result = harvest()
 					FarmManager.deposit_harvest(result)
 
-func plant(new_crop: CropData):
+func plant(new_crop: CropData) -> void:
 	if state != State.Empty:
 		return
 	crop = new_crop
 	days_grown = 0
+	watered = false
 	state = State.Planted
 	update_sprite()
 
-func _on_hud_nextday() -> void:
+func advance_day() -> void:
 	if state != State.Planted:
 		return
 	if watered:
@@ -57,19 +60,22 @@ func _on_hud_nextday() -> void:
 	watered = false
 	update_sprite()
 
-func update_sprite():
+func update_sprite() -> void:
 	if crop == null:
-		sprite.texture = null
+		sprite.texture = DIRT_TEXTURE
 		return
-	var stage_count = crop.stage_textures.size()
-	var progress = float(days_grown) / float(crop.days_to_grow)
-	var index = min(int(progress * stage_count), stage_count - 1)
-	sprite.texture = crop.stage_textures[index]
+	var stage_count: int = crop.stage_sprites.size()
+	if stage_count == 0:
+		sprite.texture = DIRT_TEXTURE
+		return
+	var progress: float = float(days_grown) / float(max(crop.days_to_grow, 1))
+	var index: int = clampi(int(progress * stage_count), 0, stage_count - 1)
+	sprite.texture = crop.stage_sprites[index]
 	
 func harvest() -> Dictionary:
 	if state != State.Ready:
 		return {}
-	var result = {"item": crop.yield_item, "amount": crop.yield_amount}
+	var result: Dictionary = {"item": crop.name, "amount": crop.yield_amount}
 	state = State.Empty
 	crop = null
 	days_grown = 0
@@ -80,6 +86,7 @@ func water():
 	if state == State.Planted and not watered:
 		$Water.show()
 		watered = true
+		FarmManager.tool_used.emit(FarmManager.Tool.Watering_Can)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
