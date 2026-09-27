@@ -11,9 +11,9 @@ var dialouge = 1
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$NextDaySign.hide()
-	$TitleBackground.hide()
 	$DayCounter.hide()
 	$DialougeBox.hide()
+	$TitleBackground.play()
 	toggle_shop()
 	fade_out()
 	nextday.connect(FarmManager._on_day_passed)
@@ -42,7 +42,6 @@ func _on_start_button_pressed() -> void:
 	$StartButton.hide()
 	$Title.hide()
 	$TitleBackground.hide()
-	$ColorRect.hide()
 	$DayCounter.show()
 	intro.emit()
 	$DialougeBox.show()
