@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://bmbf43ugjkv7s"]
 
 [ext_resource type="Script" uid="uid://cea4orptnfet4" path="res://plant_plot.gd" id="1_y4svc"]
-[ext_resource type="Texture2D" uid="uid://cvjb0l1r66oqq" path="res://assets/Carrot-5.png.png" id="2_8v7dn"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0077c"]
+load_path = "res://.godot/imported/Carrot-5.png.png-1ee975d41f78670dc9bc2e1f247629d8.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0077c"]
 size = Vector2(90, 90)
@@ -12,7 +14,7 @@ metadata/_edit_group_ = true
 
 [node name="CropSprite" type="Sprite2D" parent="." unique_id=83426421]
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_8v7dn")
+texture = SubResource("CompressedTexture2D_0077c")
 offset = Vector2(0, -20)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=95453682]
