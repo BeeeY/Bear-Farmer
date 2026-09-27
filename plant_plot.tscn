@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cea4orptnfet4" path="res://plant_plot.gd" id="1_y4svc"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0077c"]
-load_path = "res://.godot/imported/Carrot-5.png.png-1ee975d41f78670dc9bc2e1f247629d8.ctex"
+load_path = "res://.godot/imported/Pumkin-5.png.png-eaaf2eab491039896ce40e826b2c9ec5.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0077c"]
 size = Vector2(90, 90)
