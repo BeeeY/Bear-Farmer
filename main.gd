@@ -10,13 +10,6 @@ signal pumpkin
 
 var score = 0
 var day = 0 
-var carrot_seeds = 0
-var corn_seeds = 0
-var pumpkin_seeds = 0
-var wateringcan_equiped = false
-var carrot_equiped = false
-var corn_equiped = false
-var pumpkin_equiped = false
 var player_by_house = false
 var player_by_mailbox = false
 var spawn_point
@@ -43,39 +36,6 @@ func _process(delta: float) -> void:
 	if player_by_mailbox == true:
 		if Input.is_action_just_pressed("e"):
 			shop.emit()
-		
-	## detects for swapping tools
-	if Input.is_action_just_pressed("1"):
-		if wateringcan_equiped == true:
-			unequip_everthing()
-		else:
-			unequip_everthing()
-			wateringcan_equiped = true
-			wateringcan.emit()
-	if Input.is_action_just_pressed("2"):
-		if carrot_equiped == true:
-			unequip_everthing()
-		else:
-			unequip_everthing()
-			carrot_equiped = true
-			if carrot_seeds > 0:
-				carrot.emit()
-	if Input.is_action_just_pressed("3"):
-		if corn_equiped == true:
-			unequip_everthing()
-		else:
-			unequip_everthing()
-			corn_equiped = true
-			if corn_seeds > 0:
-				corn.emit()
-	if Input.is_action_just_pressed("4"):
-		if pumpkin_equiped:
-			unequip_everthing()
-		else:
-			unequip_everthing()
-			pumpkin_equiped = true
-			if pumpkin_seeds > 0:
-				pumpkin.emit()
 			
 
 ## puts the player at spawn when the game starts
@@ -109,11 +69,5 @@ func _on_mailbox_area_body_exited(body: Node2D) -> void:
 			player_by_mailbox = false
 			$Mailbox/MailboxSprite.animation = "default"
 
-## unequips items
-func unequip_everthing():
-	wateringcan_equiped = false
-	carrot_equiped = false
-	corn_equiped = false
-	pumpkin_equiped = false
-	player_by_house = false
+
 	
