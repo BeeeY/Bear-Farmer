@@ -2,12 +2,11 @@ extends Node2D
 class_name FarmPlot
 
 enum State { Empty, Planted, Ready }
-enum Tool { Hand, Carrot_Seeds, Corn_Seeds, Pumpkin_Seeds, Watering_Can }
 
 @export var plot_id = 0
 @onready var sprite = $AnimatedSprite2D
 
-var equipped_tool: Tool = Tool.Hand
+
 var state: State = State.Empty
 var crop = CropData
 var plant_stage = 0

@@ -31,7 +31,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_glgfw"]
-size = Vector2(277, 130)
+size = Vector2(277, 210)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ufewp"]
 size = Vector2(170, 170)
@@ -99,7 +99,7 @@ sprite_frames = SubResource("SpriteFrames_glgfw")
 animation = &"player_nearby"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="House" unique_id=128456905]
-position = Vector2(-0.5, 84)
+position = Vector2(-0.5, 44)
 shape = SubResource("RectangleShape2D_glgfw")
 
 [node name="HouseArea" type="Area2D" parent="House" unique_id=686969602]

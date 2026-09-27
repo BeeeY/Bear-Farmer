@@ -3,9 +3,13 @@ extends Node
 var plots: Array[FarmPlot] = []       
 var crop_database: Dictionary = {}  # id -> CropData
 var selected_seed: CropData = null  # set by your seed-picker UI
+var equipped_tool: Tool = Tool.Hand
+
+enum Tool { Hand, Carrot_Seeds, Corn_Seeds, Pumpkin_Seeds, Watering_Can }
 
 func _ready():
 	_load_crop_database()
+	equipped_tool = Tool.Watering_Can
 
 func _load_crop_database():
 	var dir = DirAccess.open("res://crops/")
