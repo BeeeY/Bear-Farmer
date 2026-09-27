@@ -71,6 +71,7 @@ size = Vector2(20, 640)
 script = ExtResource("1_h2yge")
 
 [node name="HUD" parent="." unique_id=656394136 instance=ExtResource("2_h2yge")]
+visible = false
 metadata/_edit_lock_ = true
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1665936881]
@@ -78,6 +79,15 @@ position = Vector2(576, 324)
 scale = Vector2(2, 2)
 texture = ExtResource("3_5vw27")
 metadata/_edit_lock_ = true
+
+[node name="Farm" parent="." unique_id=2106635932 instance=ExtResource("7_272bh")]
+offset_left = 682.0
+offset_top = 330.0
+offset_right = 982.0
+offset_bottom = 530.0
+
+[node name="Player" parent="." unique_id=718633263 groups=["player"] instance=ExtResource("1_0xm2m")]
+position = Vector2(1038, 391)
 
 [node name="House" type="StaticBody2D" parent="." unique_id=418637111]
 position = Vector2(166, 157)
@@ -116,43 +126,34 @@ collision_layer = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mailbox/HouseArea" unique_id=820712375]
 shape = SubResource("RectangleShape2D_2cqfq")
 
-[node name="Farm" parent="." unique_id=2106635932 instance=ExtResource("7_272bh")]
-offset_left = 682.0
-offset_top = 330.0
-offset_right = 982.0
-offset_bottom = 530.0
-
-[node name="Player" parent="." unique_id=718633263 groups=["player"] instance=ExtResource("1_0xm2m")]
-position = Vector2(1038, 391)
-
 [node name="Spawn" type="Marker2D" parent="." unique_id=1397157540]
 position = Vector2(559, 396)
 
 [node name="Spawn2" type="Marker2D" parent="." unique_id=651992066]
 position = Vector2(123, 331)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=900656497]
+[node name="Area2D" type="StaticBody2D" parent="." unique_id=1230800692]
 position = Vector2(578, 654)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1222635138]
 shape = SubResource("RectangleShape2D_272bh")
 
-[node name="Area2D3" type="Area2D" parent="." unique_id=1490732961]
+[node name="Area2D3" type="StaticBody2D" parent="." unique_id=138526518]
 position = Vector2(577, 86)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3" unique_id=612203895]
 shape = SubResource("RectangleShape2D_272bh")
 
-[node name="Area2D2" type="Area2D" parent="." unique_id=1047812272]
+[node name="Area2D2" type="StaticBody2D" parent="." unique_id=1370720394]
 position = Vector2(-9, 327)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=605034613]
 shape = SubResource("RectangleShape2D_ra5af")
 
-[node name="Area2D4" type="Area2D" parent="." unique_id=755238592]
+[node name="Area2D4" type="StaticBody2D" parent="." unique_id=949259997]
 position = Vector2(1162, 325)
 metadata/_edit_group_ = true
 

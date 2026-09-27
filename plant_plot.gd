@@ -21,7 +21,7 @@ func _ready():
 func _process(delta):
 	if player_nearby == false:
 		return
-	elif Input.is_action_just_pressed("e"):
+	elif player_nearby == true && Input.is_action_just_pressed("e"):
 		match FarmManager.equipped_tool:
 			FarmManager.Tool.Carrot_Seeds:
 				if state == State.Empty:
