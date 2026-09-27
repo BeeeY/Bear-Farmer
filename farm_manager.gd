@@ -2,6 +2,13 @@ extends Node
 
 ## emitted whenever a tool is actually used on a plot (for player animation)
 signal tool_used(tool: Tool)
+## emitted whenever coins or crop/seed counts change (for the HUD)
+signal inventory_changed
+
+## crop id -> price of one seed
+const SEED_PRICES := {"1": 5, "2": 8, "3": 12}
+## crop id -> coins earned by selling one harvested crop
+const CROP_VALUES := {"1": 12, "2": 20, "3": 30}
 
 var plots: Array[FarmPlot] = []       
 var crop_database: Dictionary = {}  # id -> CropData
@@ -16,6 +23,10 @@ var corn_equiped = false
 var pumpkin_equiped = false
 var player_by_house = false
 enum Tool { Hand, Carrot_Seeds, Corn_Seeds, Pumpkin_Seeds, Watering_Can }
+
+var coins: int = 50
+var seeds: Dictionary = {}       # crop id -> seeds owned
+var harvested: Dictionary = {}   # crop id -> harvested crops not yet sold
 
 	## detects for swapping tools with number keys 1-4
 func _process(_delta: float) -> void:
@@ -64,6 +75,14 @@ func _ready() -> void:
 	_load_crop_database()
 	equipped_tool = Tool.Hand
 	selected_seed = null
+	reset_game()
+
+## resets the economy for a fresh run (called when a new game starts)
+func reset_game() -> void:
+	coins = 50
+	seeds = {"1": 3, "2": 0, "3": 0}
+	harvested = {"1": 0, "2": 0, "3": 0}
+	inventory_changed.emit()
 
 func _load_crop_database():
 	var dir = DirAccess.open("res://crops/")
@@ -77,16 +96,51 @@ func _on_day_passed():
 		p.advance_day()
 
 func request_plant(plot: FarmPlot):
-	if selected_seed:
-		plot.plant(selected_seed)
-		tool_used.emit(equipped_tool)
+	if selected_seed == null:
+		return
+	if plot.state != FarmPlot.State.Empty:
+		return
+	var id: String = selected_seed.id
+	if seed_count(id) <= 0:
+		return
+	seeds[id] = seed_count(id) - 1
+	plot.plant(selected_seed)
+	tool_used.emit(equipped_tool)
+	inventory_changed.emit()
 
-func deposit_harvest(result: Dictionary):
+func deposit_harvest(result: Dictionary) -> void:
 	if result.is_empty():
 		return
-	print("Harvested: ", result.item, " x", result.amount)
-	# replace with your actual Inventory autoload call
-	
+	var id: String = str(result.get("id", ""))
+	harvested[id] = int(harvested.get(id, 0)) + int(result.get("amount", 0))
+	print("Harvested: ", result.get("item", "?"), " x", result.get("amount", 0))
+	inventory_changed.emit()
+
+## buys one seed of the given crop id; returns true if it was affordable
+func buy_seed(crop_id: String) -> bool:
+	var price: int = int(SEED_PRICES.get(crop_id, 0))
+	if coins < price:
+		return false
+	coins -= price
+	seeds[crop_id] = int(seeds.get(crop_id, 0)) + 1
+	inventory_changed.emit()
+	return true
+
+## sells one harvested crop of the given crop id; returns true if one was held
+func sell_crop(crop_id: String) -> bool:
+	if int(harvested.get(crop_id, 0)) <= 0:
+		return false
+	harvested[crop_id] = int(harvested.get(crop_id, 0)) - 1
+	coins += int(CROP_VALUES.get(crop_id, 0))
+	inventory_changed.emit()
+	return true
+
+func seed_count(crop_id: String) -> int:
+	return int(seeds.get(crop_id, 0))
+
+func harvest_count(crop_id: String) -> int:
+	return int(harvested.get(crop_id, 0))
+
 ## unequips items
 func unequip_everthing() -> void:
 	wateringcan_equiped = false

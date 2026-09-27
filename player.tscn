@@ -166,7 +166,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"planting",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -280,7 +280,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"watering",
-"speed": 5.0
+"speed": 6.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
@@ -294,7 +294,7 @@ script = ExtResource("1_onrkg")
 position = Vector2(0, 14)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_glgfw")
-animation = &"right"
+animation = &"watering"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1634878709]
 position = Vector2(-3, 41)

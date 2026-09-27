@@ -4,7 +4,6 @@
 [ext_resource type="Theme" uid="uid://b83kp50odklfb" path="res://new_theme.tres" id="2_640wx"]
 [ext_resource type="Texture2D" uid="uid://b75s0r80ai36r" path="res://assets/sprite_00.png" id="2_esitc"]
 [ext_resource type="Texture2D" uid="uid://cex050y3rfic8" path="res://assets/sprite_01.png" id="3_4foq8"]
-[ext_resource type="Texture2D" uid="uid://6yg0huso84ov" path="res://assets/next day sign standin.png" id="3_8sq4i"]
 [ext_resource type="Texture2D" uid="uid://bg6l0yxcb4u1h" path="res://assets/sprite_02.png" id="4_10yip"]
 [ext_resource type="Texture2D" uid="uid://dnhrcr7b3ruv8" path="res://assets/Dialouge Box.png" id="4_640wx"]
 [ext_resource type="Texture2D" uid="uid://62f0nsv702tk" path="res://assets/sprite_03.png" id="5_4txrg"]
@@ -84,6 +83,7 @@
 [ext_resource type="Texture2D" uid="uid://dtmt5xfly3f0e" path="res://assets/sprite_77.png" id="79_xd1mm"]
 [ext_resource type="Texture2D" uid="uid://bwo8a7ep5ma6r" path="res://assets/sprite_78.png" id="80_v8gux"]
 [ext_resource type="Texture2D" uid="uid://cpovo7kysr0k5" path="res://assets/sprite_79.png" id="81_mqned"]
+[ext_resource type="Texture2D" uid="uid://cjunfnycntnqv" path="res://assets/Sprite-0001.png" id="83_esitc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_glgfw"]
 animations = [{
@@ -368,78 +368,100 @@ offset_bottom = 41.0
 theme = ExtResource("2_640wx")
 text = "Day : 1"
 
-[node name="NextDaySign" type="Sprite2D" parent="." unique_id=2132740774]
-position = Vector2(558.00006, 289)
+[node name="PlantsHarvested" type="Label" parent="." unique_id=482097531]
+offset_left = 35.0
+offset_top = 74.0
+offset_right = 204.0
+offset_bottom = 245.0
+theme = ExtResource("2_640wx")
+text = "Carrots: 0
+Corn: 0
+Pumpkins: 0"
+
+[node name="SeedCount" type="Label" parent="." unique_id=1041744205]
+offset_left = 35.0
+offset_top = 250.0
+offset_right = 250.0
+offset_bottom = 421.0
+theme = ExtResource("2_640wx")
+text = "Seeds:
+Carrot: 0
+Corn: 0
+Pumpkin: 0"
+
+[node name="NextDayAndShopSign" type="Sprite2D" parent="." unique_id=2132740774]
+position = Vector2(569, 315)
 scale = Vector2(1.8079998, 1.8199999)
-texture = ExtResource("3_8sq4i")
+texture = ExtResource("83_esitc")
 
-[node name="NextDayYes" type="Button" parent="NextDaySign" unique_id=1673398465]
-offset_left = -99.557556
-offset_top = 7.6923065
-offset_right = 19.442444
-offset_bottom = 62.692307
+[node name="NextDaySignText" type="Label" parent="." unique_id=181953379]
+offset_left = 455.0
+offset_top = 231.0
+offset_right = 676.0
+offset_bottom = 286.0
 theme = ExtResource("2_640wx")
-text = "Yes"
+theme_override_font_sizes/font_size = 40
+text = "Go to Next Day?"
 
-[node name="NextDayNo" type="Button" parent="NextDaySign" unique_id=645848782]
-offset_left = 20.46457
-offset_top = 6.0439606
-offset_right = 150.46457
-offset_bottom = 61.04396
+[node name="NextDayNo" type="Button" parent="." unique_id=645848782]
+offset_left = 579.0
+offset_top = 291.0
+offset_right = 709.0
+offset_bottom = 346.0
 theme = ExtResource("2_640wx")
+theme_override_font_sizes/font_size = 50
 text = "No"
 
-[node name="Shop" type="Sprite2D" parent="." unique_id=2116241071]
-position = Vector2(568, 323.00003)
-scale = Vector2(3, 3)
-texture = ExtResource("3_8sq4i")
-
-[node name="BuySell" type="Label" parent="." unique_id=1302936994]
-offset_left = 376.0
-offset_top = 303.0
-offset_right = 439.0
-offset_bottom = 326.0
+[node name="NextDayYes" type="Button" parent="." unique_id=1673398465]
+offset_left = 414.0
+offset_top = 287.0
+offset_right = 533.0
+offset_bottom = 342.0
 theme = ExtResource("2_640wx")
-text = "Buy/Sell"
+theme_override_font_sizes/font_size = 50
+text = "Yes"
+
+[node name="ShopLabel" type="Label" parent="." unique_id=1302936994]
+offset_left = 432.0
+offset_top = 228.0
+offset_right = 569.0
+offset_bottom = 283.0
+theme = ExtResource("2_640wx")
+theme_override_font_sizes/font_size = 40
+text = "Shop"
 
 [node name="Amount" type="Label" parent="." unique_id=2041297639]
-offset_left = 284.0
-offset_top = 369.0
-offset_right = 359.0
-offset_bottom = 392.0
+offset_left = 347.0
+offset_top = 327.0
+offset_right = 508.0
+offset_bottom = 382.0
 theme = ExtResource("2_640wx")
+theme_override_font_sizes/font_size = 40
 text = "Amount : "
 
 [node name="Value" type="Label" parent="." unique_id=869238323]
-offset_left = 432.0
-offset_top = 368.0
-offset_right = 488.0
-offset_bottom = 391.0
+offset_left = 524.0
+offset_top = 327.0
+offset_right = 648.0
+offset_bottom = 382.0
 theme = ExtResource("2_640wx")
+theme_override_font_sizes/font_size = 40
 text = "Value : "
 
-[node name="Upgrades" type="Label" parent="." unique_id=985759240]
-offset_left = 706.0
-offset_top = 308.0
-offset_right = 780.0
-offset_bottom = 331.0
-theme = ExtResource("2_640wx")
-text = "Upgrades"
-
 [node name="Money" type="Label" parent="." unique_id=1038321809]
-offset_left = 477.0
-offset_top = 188.0
-offset_right = 616.0
-offset_bottom = 243.0
+offset_left = 581.0
+offset_top = 229.0
+offset_right = 720.0
+offset_bottom = 284.0
 theme = ExtResource("2_640wx")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 40
 text = "Coins : 0"
 
 [node name="PlantSelect" type="OptionButton" parent="." unique_id=1698596420]
-offset_left = 281.0
-offset_top = 334.0
-offset_right = 383.0
-offset_bottom = 365.0
+offset_left = 353.0
+offset_top = 294.0
+offset_right = 455.0
+offset_bottom = 325.0
 allow_reselect = true
 item_count = 3
 popup/item_0/text = "Carrot"
@@ -450,16 +472,59 @@ popup/item_2/text = "Pumpkin"
 popup/item_2/id = 2
 
 [node name="BuySellSelect" type="OptionButton" parent="." unique_id=767441382]
-offset_left = 431.0
-offset_top = 333.0
-offset_right = 493.0
-offset_bottom = 364.0
+offset_left = 537.0
+offset_top = 297.0
+offset_right = 599.0
+offset_bottom = 328.0
 allow_reselect = true
 item_count = 2
 popup/item_0/text = "Buy"
 popup/item_0/id = 0
 popup/item_1/text = "Sell"
 popup/item_1/id = 1
+
+[node name="BuySellButton" type="Button" parent="." unique_id=431790131]
+offset_left = 678.0
+offset_top = 296.0
+offset_right = 815.0
+offset_bottom = 351.0
+theme = ExtResource("2_640wx")
+theme_override_font_sizes/font_size = 40
+text = "Buy/Sell"
+
+[node name="EndSign" type="Sprite2D" parent="." unique_id=1998837541]
+position = Vector2(569, 315)
+scale = Vector2(1.8079998, 1.8199999)
+texture = ExtResource("83_esitc")
+
+[node name="EndTitle" type="Label" parent="." unique_id=1413377526]
+offset_left = 380.0
+offset_top = 232.0
+offset_right = 760.0
+offset_bottom = 278.0
+theme = ExtResource("2_640wx")
+theme_override_font_sizes/font_size = 38
+text = "30 Days Are Up!"
+horizontal_alignment = 1
+
+[node name="EndResult" type="Label" parent="." unique_id=1105839449]
+offset_left = 320.0
+offset_top = 282.0
+offset_right = 820.0
+offset_bottom = 352.0
+theme = ExtResource("2_640wx")
+theme_override_font_sizes/font_size = 26
+text = "Food stored: 0"
+horizontal_alignment = 1
+
+[node name="EndButton" type="Button" parent="." unique_id=635405269]
+offset_left = 480.0
+offset_top = 356.0
+offset_right = 660.0
+offset_bottom = 404.0
+theme = ExtResource("2_640wx")
+theme_override_font_sizes/font_size = 40
+text = "Restart"
 
 [node name="DayNightFade" type="ColorRect" parent="." unique_id=406025875]
 visible = false
@@ -482,7 +547,8 @@ offset_bottom = 509.0
 theme = ExtResource("2_640wx")
 theme_override_font_sizes/font_size = 40
 
-[connection signal="intro" from="." to="." method="_on_intro"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="NextDaySign/NextDayYes" to="." method="_on_next_day_yes_pressed"]
-[connection signal="pressed" from="NextDaySign/NextDayNo" to="." method="_on_next_day_no_pressed"]
+[connection signal="pressed" from="NextDayNo" to="." method="_on_next_day_no_pressed"]
+[connection signal="pressed" from="NextDayYes" to="." method="_on_next_day_yes_pressed"]
+[connection signal="pressed" from="BuySellButton" to="." method="_on_buy_sell_button_pressed"]
+[connection signal="pressed" from="EndButton" to="." method="_on_end_button_pressed"]

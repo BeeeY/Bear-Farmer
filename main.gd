@@ -1,7 +1,6 @@
 extends Node2D
 
 signal next_day
-signal game_over
 signal shop
 signal wateringcan
 signal carrot
@@ -23,11 +22,7 @@ func _ready() -> void:
 	$Mailbox/MailboxSprite.animation = "default"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	
-	## on day 30 game ends
-	if day == 30:
-		game_over.emit()
+func _process(_delta: float) -> void:
 	
 	## changes what the house looks like when the player is nearby
 	if player_by_house == true:

@@ -75,7 +75,7 @@ func update_sprite() -> void:
 func harvest() -> Dictionary:
 	if state != State.Ready:
 		return {}
-	var result: Dictionary = {"item": crop.name, "amount": crop.yield_amount}
+	var result: Dictionary = {"id": crop.id, "item": crop.name, "amount": crop.yield_amount}
 	state = State.Empty
 	crop = null
 	days_grown = 0
