@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bmbf43ugjkv7s"]
 
 [ext_resource type="Script" uid="uid://cea4orptnfet4" path="res://plant_plot.gd" id="1_y4svc"]
-[ext_resource type="Texture2D" uid="uid://c71i1p3kp1i11" path="res://assets/New Piskel-5.png.png" id="2_8v7dn"]
+[ext_resource type="Texture2D" uid="uid://cvjb0l1r66oqq" path="res://assets/Carrot-5.png.png" id="2_8v7dn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0077c"]
 size = Vector2(90, 90)
