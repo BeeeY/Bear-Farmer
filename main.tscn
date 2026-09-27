@@ -165,6 +165,7 @@ stream = ExtResource("8_5vw27")
 autoplay = true
 
 [connection signal="next_day" from="." to="HUD" method="_on_main_next_day"]
+[connection signal="shop" from="." to="HUD" method="_on_main_shop"]
 [connection signal="intro" from="HUD" to="." method="_on_hud_intro"]
 [connection signal="nextday" from="HUD" to="." method="_on_hud_nextday"]
 [connection signal="start" from="HUD" to="." method="_on_hud_start"]

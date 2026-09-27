@@ -94,3 +94,7 @@ func toggle_shop():
 		$Money.show()
 		$PlantSelect.show()
 		$BuySellSelect.show()
+
+
+func _on_main_shop() -> void:
+	$Shop.show()
