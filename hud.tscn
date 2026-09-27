@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://opvntanvllxq" path="res://hud.gd" id="1_64ctp"]
 [ext_resource type="Theme" uid="uid://b83kp50odklfb" path="res://new_theme.tres" id="2_640wx"]
 [ext_resource type="Texture2D" uid="uid://6yg0huso84ov" path="res://assets/next day sign standin.png" id="3_8sq4i"]
+[ext_resource type="Texture2D" uid="uid://dnhrcr7b3ruv8" path="res://assets/Dialouge Box.png" id="4_640wx"]
 
 [node name="HUD" type="CanvasLayer" unique_id=1081153660]
 script = ExtResource("1_64ctp")
@@ -143,6 +144,20 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
+[node name="DialougeBox" type="Sprite2D" parent="." unique_id=1754629104]
+position = Vector2(580, 506)
+scale = Vector2(2, 2)
+texture = ExtResource("4_640wx")
+
+[node name="Dialouge" type="Label" parent="." unique_id=616756826]
+offset_left = 304.0
+offset_top = 454.0
+offset_right = 689.0
+offset_bottom = 509.0
+theme = ExtResource("2_640wx")
+theme_override_font_sizes/font_size = 40
+
+[connection signal="intro" from="." to="." method="_on_intro"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="NextDaySign/NextDayYes" to="." method="_on_next_day_yes_pressed"]
 [connection signal="pressed" from="NextDaySign/NextDayNo" to="." method="_on_next_day_no_pressed"]

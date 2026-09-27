@@ -1,22 +1,41 @@
 extends CanvasLayer
 
 signal start
+signal intro
 signal nextday
 
 var day = 1
+var dialougestarted = false
+var dialouge = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$NextDaySign.hide()
 	$TitleBackground.hide()
 	$DayCounter.hide()
+	$DialougeBox.hide()
 	toggle_shop()
 	fade_out()
 	nextday.connect(FarmManager._on_day_passed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+		if dialougestarted == true && dialouge == 1:
+			$Dialouge.text = "It's my first fall alone, and it's time to 
+			prep for winter."
+			$Dialouge.show()
+			dialouge += 1
+		if Input.is_action_just_pressed("e") && dialouge == 2:
+			$Dialouge.text = "I have 30 days to farm enough food to 
+			keep me full while I hibernate."
+			dialouge +=1
+		if Input.is_action_just_pressed("e") && dialouge == 3:
+			$Dialouge.text = "It's time to set out some roots!"
+			dialouge +=1
+		if Input.is_action_just_pressed("e") && dialouge == 4:
+			$Dialouge.hide()
+			$DialougeBox.hide()
+			start.emit()
 
 ## starts the game
 func _on_start_button_pressed() -> void:
@@ -25,7 +44,10 @@ func _on_start_button_pressed() -> void:
 	$TitleBackground.hide()
 	$ColorRect.hide()
 	$DayCounter.show()
-	start.emit()
+	intro.emit()
+	$DialougeBox.show()
+	dialougestarted = true
+
 	
 ## changes the day
 func _on_main_next_day() -> void:

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x4x5nhnmnmmy"
-path="res://.godot/imported/standin background.png-cfb700cf816a227b20382f4ba05d0248.ctex"
+uid="uid://gt41voiluvtl"
+path="res://.godot/imported/Background.png-6d72d35f07f42b3845e8764c552bb4fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/standin background.png"
-dest_files=["res://.godot/imported/standin background.png-cfb700cf816a227b20382f4ba05d0248.ctex"]
+source_file="res://assets/Background.png"
+dest_files=["res://.godot/imported/Background.png-6d72d35f07f42b3845e8764c552bb4fb.ctex"]
 
 [params]
 
