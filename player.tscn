@@ -2,12 +2,67 @@
 
 [ext_resource type="Script" uid="uid://dorbgnkgvfq5x" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://bsvlmdnv57uxo" path="res://assets/Bear walk cycle forward-1.png.png" id="2_dw050"]
-[ext_resource type="Texture2D" uid="uid://c5xj0a1wegg4l" path="res://assets/standin bear.png" id="2_onrkg"]
 [ext_resource type="Texture2D" uid="uid://dvh8qyn3osibm" path="res://assets/Bear walk cycle forward-2.png.png" id="3_b26j0"]
 [ext_resource type="Texture2D" uid="uid://dxyahbtt2jn0o" path="res://assets/Bear walk cycle forward-3.png.png" id="4_n7ghd"]
 [ext_resource type="Texture2D" uid="uid://hbanwfjpjmg" path="res://assets/Bear walk cycle forward-4.png.png" id="5_nvl01"]
 [ext_resource type="Texture2D" uid="uid://cvxgk022vafti" path="res://assets/Bear walk cycle forward-5.png.png" id="6_ivps1"]
 [ext_resource type="Texture2D" uid="uid://c0hmjuyir1ts0" path="res://assets/Bear walk cycle forward-6.png.png" id="7_urp6f"]
+[ext_resource type="Texture2D" uid="uid://pxco422kpdhg" path="res://assets/Bear walk cycle left-1.png.png" id="8_yem3p"]
+[ext_resource type="Texture2D" uid="uid://bxlajilddaods" path="res://assets/Bear walk cycle left-2.png.png" id="9_86rna"]
+[ext_resource type="Texture2D" uid="uid://debjfrynj856m" path="res://assets/Bear walk cycle left-3.png.png" id="10_xg1a7"]
+[ext_resource type="Texture2D" uid="uid://txklnwklnm2k" path="res://assets/Bear walk cycle left-4.png.png" id="11_ob4mi"]
+[ext_resource type="Texture2D" uid="uid://gvqtx0wg5pgi" path="res://assets/Bear walk cycle left-5.png.png" id="12_ax26h"]
+[ext_resource type="Texture2D" uid="uid://bov82oobrr5ph" path="res://assets/Bear planting animation-1.png.png" id="13_kh4g0"]
+[ext_resource type="Texture2D" uid="uid://bsgpaiu88cyre" path="res://assets/Bear planting animation-2.png.png" id="14_mgmjd"]
+[ext_resource type="Texture2D" uid="uid://bt8kl6acysifk" path="res://assets/Bear planting animation-3.png.png" id="15_va2xi"]
+[ext_resource type="Texture2D" uid="uid://ci60n5r4wyk67" path="res://assets/Bear planting animation-4.png.png" id="16_fkf2u"]
+[ext_resource type="Texture2D" uid="uid://becf3lo33d2qw" path="res://assets/Bear planting animation-5.png.png" id="17_s7jk6"]
+[ext_resource type="Texture2D" uid="uid://d0iigyuye4n8f" path="res://assets/Bear planting animation-6.png.png" id="18_feeoa"]
+[ext_resource type="Texture2D" uid="uid://1j7qfc12elq" path="res://assets/Bear planting animation-7.png.png" id="19_m6nxt"]
+[ext_resource type="Texture2D" uid="uid://b34flkmtaxks7" path="res://assets/Bear planting animation-8.png.png" id="20_ym00c"]
+[ext_resource type="Texture2D" uid="uid://cygejxkt81xpr" path="res://assets/Bear planting animation-9.png.png" id="21_ee2o4"]
+[ext_resource type="Texture2D" uid="uid://caml7uuwjxbbu" path="res://assets/Bear planting animation-10.png.png" id="22_vie4p"]
+[ext_resource type="Texture2D" uid="uid://ml1qchg6gmnc" path="res://assets/Bear planting animation-11.png.png" id="23_0jj5r"]
+[ext_resource type="Texture2D" uid="uid://cw0oy4bhgr51" path="res://assets/Bear planting animation-12.png.png" id="24_77e46"]
+[ext_resource type="Texture2D" uid="uid://cq02x8gk3joc7" path="res://assets/Bear planting animation-13.png.png" id="25_cy2ki"]
+[ext_resource type="Texture2D" uid="uid://dfgjcvwxubv7v" path="res://assets/Bear planting animation-14.png.png" id="26_04cqw"]
+[ext_resource type="Texture2D" uid="uid://cegjrw81acygx" path="res://assets/Bear planting animation-15.png.png" id="27_vihdy"]
+[ext_resource type="Texture2D" uid="uid://5bk02pyuysut" path="res://assets/Bear planting animation-16.png.png" id="28_7c55y"]
+[ext_resource type="Texture2D" uid="uid://b5xm2ct5ksvli" path="res://assets/Bear planting animation-17.png.png" id="29_hoal8"]
+[ext_resource type="Texture2D" uid="uid://by0hrktnunymv" path="res://assets/Bear planting animation-18.png.png" id="30_htija"]
+[ext_resource type="Texture2D" uid="uid://dvtp7d00oc66k" path="res://assets/Bear walk cycle right-1.png.png" id="31_he65s"]
+[ext_resource type="Texture2D" uid="uid://tgsfrfv60aho" path="res://assets/Bear walk cycle right-2.png.png" id="32_c0yt3"]
+[ext_resource type="Texture2D" uid="uid://b8kg5doi46yyq" path="res://assets/Bear walk cycle right-3.png.png" id="33_uckl6"]
+[ext_resource type="Texture2D" uid="uid://dw46e8us0mx5k" path="res://assets/Bear walk cycle right-4.png.png" id="34_5ihbc"]
+[ext_resource type="Texture2D" uid="uid://dixpr0b0nvj1t" path="res://assets/Bear walk cycle right-5.png.png" id="35_sc53x"]
+[ext_resource type="Texture2D" uid="uid://dcxgou05pgnwa" path="res://assets/Bear walk cycle backward-1.png.png" id="36_ro7of"]
+[ext_resource type="Texture2D" uid="uid://rn0rdqjfrgla" path="res://assets/Bear walk cycle backward-2.png.png" id="37_dn2kn"]
+[ext_resource type="Texture2D" uid="uid://kc0wjv5yglmr" path="res://assets/Bear walk cycle backward-3.png.png" id="38_4tmhn"]
+[ext_resource type="Texture2D" uid="uid://2hnc7ly0lelg" path="res://assets/Bear walk cycle backward-4.png.png" id="39_gpvxe"]
+[ext_resource type="Texture2D" uid="uid://chmc0scsx2fxj" path="res://assets/Bear walk cycle backward-5.png.png" id="40_qicb8"]
+[ext_resource type="Texture2D" uid="uid://50vc0eak8fw5" path="res://assets/Bear walk cycle backward-6.png.png" id="41_6o2m3"]
+[ext_resource type="Texture2D" uid="uid://c8dc8506b7u7c" path="res://assets/Bear watering animation-1.png.png" id="42_2hmo1"]
+[ext_resource type="Texture2D" uid="uid://ivvsyprri5lt" path="res://assets/Bear watering animation-2.png.png" id="43_uygay"]
+[ext_resource type="Texture2D" uid="uid://7cvaoafeaq20" path="res://assets/Bear watering animation-3.png.png" id="44_rpay4"]
+[ext_resource type="Texture2D" uid="uid://cg01l16h7ue0y" path="res://assets/Bear watering animation-4.png.png" id="45_xfa3h"]
+[ext_resource type="Texture2D" uid="uid://cu0okdn1y62j6" path="res://assets/Bear watering animation-5.png.png" id="46_04g4e"]
+[ext_resource type="Texture2D" uid="uid://v4mdiyxtrcy8" path="res://assets/Bear watering animation-6.png.png" id="47_lx1qc"]
+[ext_resource type="Texture2D" uid="uid://dsekac4afgqpc" path="res://assets/Bear watering animation-7.png.png" id="48_elm0x"]
+[ext_resource type="Texture2D" uid="uid://b04sg7l874h5m" path="res://assets/Bear watering animation-8.png.png" id="49_k7vj2"]
+[ext_resource type="Texture2D" uid="uid://ba3jwybe5ky3y" path="res://assets/Bear watering animation-9.png.png" id="50_dtw5u"]
+[ext_resource type="Texture2D" uid="uid://beutykilh7na" path="res://assets/Bear watering animation-10.png.png" id="51_f37gn"]
+[ext_resource type="Texture2D" uid="uid://c6arv636a3cd1" path="res://assets/Bear watering animation-11.png.png" id="52_jccjf"]
+[ext_resource type="Texture2D" uid="uid://dgijommvlljni" path="res://assets/Bear watering animation-12.png.png" id="53_qhi2v"]
+[ext_resource type="Texture2D" uid="uid://cwgukq6pb60ec" path="res://assets/Bear watering animation-13.png.png" id="54_ipvpa"]
+[ext_resource type="Texture2D" uid="uid://co2qic1kofgvo" path="res://assets/Bear watering animation-14.png.png" id="55_nevyh"]
+[ext_resource type="Texture2D" uid="uid://bke6c58cjekrv" path="res://assets/Bear watering animation-15.png.png" id="56_hhr50"]
+[ext_resource type="Texture2D" uid="uid://dpu3oaaqmorvy" path="res://assets/Bear watering animation-16.png.png" id="57_8u4el"]
+[ext_resource type="Texture2D" uid="uid://bnkbx8bv7l54c" path="res://assets/Bear watering animation-17.png.png" id="58_a5i73"]
+[ext_resource type="Texture2D" uid="uid://b65d5jeapks5r" path="res://assets/Bear watering animation-18.png.png" id="59_j7swm"]
+[ext_resource type="Texture2D" uid="uid://bru20smd2rgau" path="res://assets/Bear watering animation-19.png.png" id="60_bobas"]
+[ext_resource type="Texture2D" uid="uid://b6ol1c2ttbtb3" path="res://assets/Bear watering animation-20.png.png" id="61_vmuuc"]
+[ext_resource type="Texture2D" uid="uid://dfeu4us8a3ku5" path="res://assets/Bear watering animation-21.png.png" id="62_j6q74"]
+[ext_resource type="Texture2D" uid="uid://i4y01bvpcp1s" path="res://assets/Bear watering animation-22.png.png" id="63_hhe1y"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_glgfw"]
 animations = [{
@@ -34,17 +89,197 @@ animations = [{
 "name": &"down",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_yem3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_86rna")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xg1a7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ob4mi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ax26h")
+}],
 "loop": 1,
-"name": &"side",
+"name": &"left",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_onrkg")
+"texture": ExtResource("13_kh4g0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mgmjd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_va2xi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_fkf2u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_s7jk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_feeoa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_m6nxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ym00c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ee2o4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_vie4p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_0jj5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_77e46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_cy2ki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_04cqw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_vihdy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_7c55y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_hoal8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_htija")
+}],
+"loop": 1,
+"name": &"planting",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_he65s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_c0yt3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_uckl6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_5ihbc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_sc53x")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_ro7of")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_dn2kn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_4tmhn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_gpvxe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_qicb8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_6o2m3")
 }],
 "loop": 1,
 "name": &"up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("42_2hmo1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_uygay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_rpay4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_xfa3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_04g4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_lx1qc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_elm0x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_k7vj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_dtw5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_f37gn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_jccjf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_qhi2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_ipvpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_nevyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_hhr50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_8u4el")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_a5i73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_j7swm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_bobas")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_vmuuc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_j6q74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_hhe1y")
+}],
+"loop": 1,
+"name": &"watering",
 "speed": 5.0
 }]
 
@@ -59,7 +294,7 @@ script = ExtResource("1_onrkg")
 position = Vector2(0, 14)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_glgfw")
-animation = &"down"
+animation = &"right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1634878709]
 position = Vector2(-3, 41)
