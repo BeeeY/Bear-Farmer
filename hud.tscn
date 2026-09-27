@@ -494,6 +494,15 @@ theme = ExtResource("2_640wx")
 theme_override_font_sizes/font_size = 40
 text = "Buy/Sell"
 
+[node name="ShopExitButton" type="Button" parent="." unique_id=764220195]
+offset_left = 680.0
+offset_top = 354.0
+offset_right = 815.0
+offset_bottom = 400.0
+theme = ExtResource("2_640wx")
+theme_override_font_sizes/font_size = 32
+text = "Exit Shop"
+
 [node name="EndSign" type="Sprite2D" parent="." unique_id=1998837541]
 position = Vector2(569, 315)
 scale = Vector2(1.8079998, 1.8199999)
@@ -553,4 +562,5 @@ theme_override_font_sizes/font_size = 40
 [connection signal="pressed" from="NextDayNo" to="." method="_on_next_day_no_pressed"]
 [connection signal="pressed" from="NextDayYes" to="." method="_on_next_day_yes_pressed"]
 [connection signal="pressed" from="BuySellButton" to="." method="_on_buy_sell_button_pressed"]
+[connection signal="pressed" from="ShopExitButton" to="." method="_on_shop_exit_button_pressed"]
 [connection signal="pressed" from="EndButton" to="." method="_on_end_button_pressed"]

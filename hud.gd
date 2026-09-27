@@ -89,6 +89,7 @@ func _hide_sign_ui() -> void:
 	$PlantSelect.hide()
 	$BuySellSelect.hide()
 	$BuySellButton.hide()
+	$ShopExitButton.hide()
 
 ## shows the "go to next day?" prompt when the player is by the house
 func _on_main_next_day() -> void:
@@ -168,7 +169,12 @@ func _on_main_shop() -> void:
 	$PlantSelect.show()
 	$BuySellSelect.show()
 	$BuySellButton.show()
+	$ShopExitButton.show()
 	_refresh_inventory()
+
+## closes the shop without triggering another interaction
+func _on_shop_exit_button_pressed() -> void:
+	_hide_sign_ui()
 
 ## maps the PlantSelect option index to a crop id
 func _selected_crop_id() -> String:
