@@ -1,12 +1,17 @@
 [gd_resource type="Resource" script_class="CropData" format=3 uid="uid://bvxm5w5y21hyp"]
 
 [ext_resource type="Script" uid="uid://b4obenqre4w5u" path="res://CropData.gd" id="1_cwccw"]
+[ext_resource type="Texture2D" uid="uid://dk1w01s1mbmeu" path="res://assets/plant standin2.png" id="2_corn1"]
+[ext_resource type="Texture2D" uid="uid://c1kallbxtri0x" path="res://assets/plant standin3.png" id="3_corn2"]
+[ext_resource type="Texture2D" uid="uid://ehvwhm4u538t" path="res://assets/plant standin4.png" id="4_corn3"]
+[ext_resource type="Texture2D" uid="uid://cl7nmfs4443g3" path="res://assets/plant standin5.png" id="5_corn4"]
+[ext_resource type="Texture2D" uid="uid://btx1y7e61d1lt" path="res://assets/plant standin6.png" id="6_corn5"]
 
 [resource]
 script = ExtResource("1_cwccw")
 id = "2"
 name = "Corn"
 days_to_grow = 5
-stage_sprites = Array[Texture2D]([null, null, null])
+stage_sprites = Array[Texture2D]([ExtResource("2_corn1"), ExtResource("3_corn2"), ExtResource("4_corn3"), ExtResource("5_corn4"), ExtResource("6_corn5")])
 yield_amount = 4
 metadata/_custom_type_script = "uid://b4obenqre4w5u"

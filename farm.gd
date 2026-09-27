@@ -3,11 +3,13 @@ extends GridContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	for child in get_children():
+	_collect_plots(self)
+
+
+# Recursively finds every FarmPlot in the tree (they are nested inside
+# Control nodes that make up the grid cells).
+func _collect_plots(node: Node) -> void:
+	for child in node.get_children():
 		if child is FarmPlot:
 			FarmManager.plots.append(child)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+		_collect_plots(child)
