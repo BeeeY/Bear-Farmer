@@ -3,6 +3,10 @@ extends Node2D
 signal next_day
 signal game_over
 signal shop
+signal wateringcan
+signal carrot
+signal corn
+signal pumpkin
 
 var score = 0
 var day = 0 
@@ -47,24 +51,31 @@ func _process(delta: float) -> void:
 		else:
 			unequip_everthing()
 			wateringcan_equiped = true
+			wateringcan.emit()
 	if Input.is_action_just_pressed("2"):
 		if carrot_equiped == true:
 			unequip_everthing()
 		else:
 			unequip_everthing()
 			carrot_equiped = true
+			if carrot_seeds > 0:
+				carrot.emit()
 	if Input.is_action_just_pressed("3"):
 		if corn_equiped == true:
 			unequip_everthing()
 		else:
 			unequip_everthing()
 			corn_equiped = true
+			if corn_seeds > 0:
+				corn.emit()
 	if Input.is_action_just_pressed("4"):
 		if pumpkin_equiped:
 			unequip_everthing()
 		else:
 			unequip_everthing()
 			pumpkin_equiped = true
+			if pumpkin_seeds > 0:
+				pumpkin.emit()
 			
 
 ## puts the player at spawn when the game starts
